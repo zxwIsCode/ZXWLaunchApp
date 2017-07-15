@@ -7,6 +7,7 @@
 //
 
 #import "MyWebViewViewController.h"
+#import "DisplayHelper.h"
 
 @interface MyWebViewViewController ()<UIWebViewDelegate>
 
@@ -29,13 +30,18 @@
 #pragma mark - UIWebViewDelegate
 -(void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"开始加载了");
+    [[DisplayHelper shareDisplayHelper]showLoading:self.view noteText:@"礼物加载中..."];
 }
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
     
     NSLog(@"加载完成了");
+    [[DisplayHelper shareDisplayHelper]hideLoading:self.view];
+    [DisplayHelper displaySuccessAlert:@"我的技术网址:最好的礼物 😆"];
 }
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     NSLog(@"加载失败了");
+    [[DisplayHelper shareDisplayHelper]hideLoading:self.view];
+    [DisplayHelper displayWarningAlert:@"加载失败了，下次领礼物吧 ☹"];
 }
 
 #pragma mark - Setter & Getter

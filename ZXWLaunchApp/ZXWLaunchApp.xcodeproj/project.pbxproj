@@ -36,6 +36,10 @@
 		8BA191841F1A194A0048C425 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191721F1A194A0048C425 /* UIImageView+HighlightedWebCache.m */; };
 		8BA191851F1A194A0048C425 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191741F1A194A0048C425 /* UIImageView+WebCache.m */; };
 		8BA191861F1A194A0048C425 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191761F1A194A0048C425 /* UIView+WebCacheOperation.m */; };
+		8BA191891F1A21400048C425 /* DisplayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191881F1A21400048C425 /* DisplayHelper.m */; };
+		8BA1918F1F1A21B20048C425 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1918B1F1A21B20048C425 /* LICENSE */; };
+		8BA191901F1A21B20048C425 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1918D1F1A21B20048C425 /* MBProgressHUD.m */; };
+		8BA191911F1A21B20048C425 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1918E1F1A21B20048C425 /* README.mdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,12 @@
 		8BA191741F1A194A0048C425 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		8BA191751F1A194A0048C425 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		8BA191761F1A194A0048C425 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		8BA191871F1A213E0048C425 /* DisplayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayHelper.h; path = "../../../../../PersonCode/畜牧通/FarmAndAnimal/FarmAndAnimal/Utils/PublicView/DisplayHelper.h"; sourceTree = "<group>"; };
+		8BA191881F1A21400048C425 /* DisplayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayHelper.m; path = "../../../../../PersonCode/畜牧通/FarmAndAnimal/FarmAndAnimal/Utils/PublicView/DisplayHelper.m"; sourceTree = "<group>"; };
+		8BA1918B1F1A21B20048C425 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8BA1918C1F1A21B20048C425 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8BA1918D1F1A21B20048C425 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8BA1918E1F1A21B20048C425 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +211,9 @@
 		8B5D32401F19EFB6002CFA5E /* ZXWLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				8BA191871F1A213E0048C425 /* DisplayHelper.h */,
+				8BA191881F1A21400048C425 /* DisplayHelper.m */,
+				8BA1918A1F1A21B20048C425 /* MBProgressHUD */,
 				8BA191551F1A194A0048C425 /* SDWebImage */,
 				8B5D32411F19F007002CFA5E /* LaunchViewController.h */,
 				8B5D32421F19F007002CFA5E /* LaunchViewController.m */,
@@ -258,6 +271,18 @@
 			);
 			name = SDWebImage;
 			path = "../../../../../PersonCode/畜牧通/FarmAndAnimal/FarmAndAnimal/Vendor/SDWebImage";
+			sourceTree = "<group>";
+		};
+		8BA1918A1F1A21B20048C425 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8BA1918B1F1A21B20048C425 /* LICENSE */,
+				8BA1918C1F1A21B20048C425 /* MBProgressHUD.h */,
+				8BA1918D1F1A21B20048C425 /* MBProgressHUD.m */,
+				8BA1918E1F1A21B20048C425 /* README.mdown */,
+			);
+			name = MBProgressHUD;
+			path = "../../../../../PersonCode/畜牧通/FarmAndAnimal/FarmAndAnimal/Vendor/MBProgressHUD";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA1918F1F1A21B20048C425 /* LICENSE in Resources */,
 				8B5D324D1F19FA83002CFA5E /* LaunchImg@2x.png in Resources */,
 				8B35A0F01F18765400DB2C3A /* LaunchScreen.storyboard in Resources */,
 				8B35A0ED1F18765400DB2C3A /* Assets.xcassets in Resources */,
@@ -399,6 +425,7 @@
 				8BA191861F1A194A0048C425 /* UIView+WebCacheOperation.m in Sources */,
 				8B5D32461F19F428002CFA5E /* LaunchItemModel.m in Sources */,
 				8BA191801F1A194A0048C425 /* UIButton+WebCache.m in Sources */,
+				8BA191901F1A21B20048C425 /* MBProgressHUD.m in Sources */,
 				8BA191781F1A194A0048C425 /* NSData+ImageContentType.m in Sources */,
 				8BA1917F1F1A194A0048C425 /* SDWebImagePrefetcher.m in Sources */,
 				8BA1917C1F1A194A0048C425 /* SDWebImageDownloader.m in Sources */,
@@ -410,7 +437,9 @@
 				8BA191771F1A194A0048C425 /* MKAnnotationView+WebCache.m in Sources */,
 				8BA1917A1F1A194A0048C425 /* SDWebImageCompat.m in Sources */,
 				8BA191541F1A10120048C425 /* MyWebViewViewController.m in Sources */,
+				8BA191911F1A21B20048C425 /* README.mdown in Sources */,
 				8B35A0E51F18765400DB2C3A /* AppDelegate.m in Sources */,
+				8BA191891F1A21400048C425 /* DisplayHelper.m in Sources */,
 				8BA191821F1A194A0048C425 /* UIImage+MultiFormat.m in Sources */,
 				8BA191841F1A194A0048C425 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8BA191811F1A194A0048C425 /* UIImage+GIF.m in Sources */,
