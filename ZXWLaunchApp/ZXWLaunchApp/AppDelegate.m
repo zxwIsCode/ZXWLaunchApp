@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "LaunchViewController.h"
+#import "ViewController.h"
+#import "LaunchItemModel.h"
 
 @interface AppDelegate ()
+
+@property(nonatomic,strong)LaunchViewController *launchVC;
 
 @end
 
@@ -16,7 +21,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    // 确定rootVC，暂定为VC
+    ViewController *vc =[[ViewController alloc]init];
+    
+    // 初始化要传递的参数Model
+    LaunchItemModel *itemModel =[[LaunchItemModel alloc]init];
+    
+    // 加载本地图片
+    _launchVC =[[LaunchViewController alloc]initWithRootVC:vc andLaunchType:LaunchType_Local];
+    itemModel.launchUrl =@"LaunchImg@2x.png";
+    // 这2个参数可以不传，用默认的
+    itemModel.lanchMaxTime =5;
+    itemModel.launchJumpUrl =@"www.jianshu.com";
+    
+    // 赋值
+    _launchVC.itemModel =itemModel;
+    
+    self.window.rootViewController =_launchVC;
+    
+//    // gif网络图片
+//    http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif
+    
+    
+    
     return YES;
 }
 

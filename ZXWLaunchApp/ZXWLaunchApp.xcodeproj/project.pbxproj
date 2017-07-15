@@ -15,6 +15,10 @@
 		8B35A0F31F18765400DB2C3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A0F21F18765400DB2C3A /* main.m */; };
 		8B35A0FD1F18765500DB2C3A /* ZXWLaunchAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A0FC1F18765500DB2C3A /* ZXWLaunchAppTests.m */; };
 		8B35A1081F18765500DB2C3A /* ZXWLaunchAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A1071F18765500DB2C3A /* ZXWLaunchAppUITests.m */; };
+		8B5D32431F19F007002CFA5E /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D32421F19F007002CFA5E /* LaunchViewController.m */; };
+		8B5D32461F19F428002CFA5E /* LaunchItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D32451F19F428002CFA5E /* LaunchItemModel.m */; };
+		8B5D324B1F19FA71002CFA5E /* qidong.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D324A1F19FA71002CFA5E /* qidong.mp4 */; };
+		8B5D324D1F19FA83002CFA5E /* LaunchImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,12 @@
 		8B35A1031F18765500DB2C3A /* ZXWLaunchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXWLaunchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B35A1071F18765500DB2C3A /* ZXWLaunchAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXWLaunchAppUITests.m; sourceTree = "<group>"; };
 		8B35A1091F18765500DB2C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B5D32411F19F007002CFA5E /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		8B5D32421F19F007002CFA5E /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		8B5D32441F19F428002CFA5E /* LaunchItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchItemModel.h; sourceTree = "<group>"; };
+		8B5D32451F19F428002CFA5E /* LaunchItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchItemModel.m; sourceTree = "<group>"; };
+		8B5D324A1F19FA71002CFA5E /* qidong.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = qidong.mp4; path = "../../../../../TempCode/App启动页集合/startMovie-master/StartMovie/StartMovie/qidong.mp4"; sourceTree = "<group>"; };
+		8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImg@2x.png"; path = "../../../../../TempCode/App启动页集合/XYLaunchAndIntroduction-master/XYLaunchAndIntroductionExample/XYLaunchAndIntroductionExample/XYTestImgs/LaunchImg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,8 @@
 		8B35A0E21F18765400DB2C3A /* ZXWLaunchApp */ = {
 			isa = PBXGroup;
 			children = (
+				8B5D32471F19FA0D002CFA5E /* Resource */,
+				8B5D32401F19EFB6002CFA5E /* ZXWLaunch */,
 				8B35A0E31F18765400DB2C3A /* AppDelegate.h */,
 				8B35A0E41F18765400DB2C3A /* AppDelegate.m */,
 				8B35A0E61F18765400DB2C3A /* ViewController.h */,
@@ -130,6 +142,26 @@
 				8B35A1091F18765500DB2C3A /* Info.plist */,
 			);
 			path = ZXWLaunchAppUITests;
+			sourceTree = "<group>";
+		};
+		8B5D32401F19EFB6002CFA5E /* ZXWLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				8B5D32411F19F007002CFA5E /* LaunchViewController.h */,
+				8B5D32421F19F007002CFA5E /* LaunchViewController.m */,
+				8B5D32441F19F428002CFA5E /* LaunchItemModel.h */,
+				8B5D32451F19F428002CFA5E /* LaunchItemModel.m */,
+			);
+			path = ZXWLaunch;
+			sourceTree = "<group>";
+		};
+		8B5D32471F19FA0D002CFA5E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */,
+				8B5D324A1F19FA71002CFA5E /* qidong.mp4 */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +267,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5D324D1F19FA83002CFA5E /* LaunchImg@2x.png in Resources */,
 				8B35A0F01F18765400DB2C3A /* LaunchScreen.storyboard in Resources */,
 				8B35A0ED1F18765400DB2C3A /* Assets.xcassets in Resources */,
 				8B35A0EB1F18765400DB2C3A /* Main.storyboard in Resources */,
+				8B5D324B1F19FA71002CFA5E /* qidong.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B35A0E81F18765400DB2C3A /* ViewController.m in Sources */,
+				8B5D32461F19F428002CFA5E /* LaunchItemModel.m in Sources */,
+				8B5D32431F19F007002CFA5E /* LaunchViewController.m in Sources */,
 				8B35A0F31F18765400DB2C3A /* main.m in Sources */,
 				8B35A0E51F18765400DB2C3A /* AppDelegate.m in Sources */,
 			);
@@ -518,6 +554,7 @@
 				8B35A10E1F18765500DB2C3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B35A10F1F18765500DB2C3A /* Build configuration list for PBXNativeTarget "ZXWLaunchAppTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +563,7 @@
 				8B35A1111F18765500DB2C3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B35A1121F18765500DB2C3A /* Build configuration list for PBXNativeTarget "ZXWLaunchAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +572,7 @@
 				8B35A1141F18765500DB2C3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
