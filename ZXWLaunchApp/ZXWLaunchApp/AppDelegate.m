@@ -27,16 +27,17 @@
     
     // 确定rootVC，暂定为VC
     ViewController *vc =[[ViewController alloc]init];
+    UINavigationController *nav =[[UINavigationController alloc]initWithRootViewController:vc];
     
     // 初始化要传递的参数Model
     LaunchItemModel *itemModel =[[LaunchItemModel alloc]init];
     
     // 加载本地图片
-    _launchVC =[[LaunchViewController alloc]initWithRootVC:vc andLaunchType:LaunchType_Local];
+    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Local];
     itemModel.launchUrl =@"LaunchImg@2x.png";
     // 这2个参数可以不传，用默认的
     itemModel.lanchMaxTime =5;
-    itemModel.launchJumpUrl =@"www.jianshu.com";
+    itemModel.launchJumpUrl =@"http://www.jianshu.com";
     
     // 赋值
     _launchVC.itemModel =itemModel;
