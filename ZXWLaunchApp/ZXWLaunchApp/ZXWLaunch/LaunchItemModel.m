@@ -11,4 +11,11 @@
 @implementation LaunchItemModel
 
 
+-(NSInteger)lanchMaxTime {
+    if (_lanchMaxTime) {
+        _lanchMaxTime =3;
+    }
+    return _lanchMaxTime;
+}
+
 @end

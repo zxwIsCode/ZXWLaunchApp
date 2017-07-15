@@ -43,11 +43,21 @@
     
     if (!_webView) {
         _webView =[[UIWebView alloc]init];
-        NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.jianshu.com/nb/7415402"]];
+        if (!self.itemModel.launchJumpUrl.length) {
+            self.itemModel.launchJumpUrl =@"http://www.jianshu.com/nb/7415402";
+        }
+        NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.itemModel.launchJumpUrl]];
         [_webView loadRequest:request];
         _webView.delegate =self;
     }
     return _webView;
+}
+
+-(LaunchItemModel *)itemModel {
+    if (!_itemModel) {
+        _itemModel =[[LaunchItemModel alloc]init];
+    }
+    return _itemModel;
 }
 
 @end

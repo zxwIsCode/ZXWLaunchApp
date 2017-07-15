@@ -7,6 +7,8 @@
 //
 
 #import "LaunchViewController.h"
+#import "UIImageView+WebCache.h"
+#import "AppDelegate.h"
 
 
 
@@ -27,12 +29,13 @@
 
 @implementation LaunchViewController
 
-#pragma mark - Init;
+#pragma mark - Init
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor whiteColor];
     self.imageView.frame =[UIScreen mainScreen].bounds;
+    [self.view addSubview:self.imageView];
     
     // 以不同的方式加载启动页
     [self loadLaunchImages];
@@ -76,28 +79,54 @@
 -(void)creatLocalImages {
     if (self.itemModel.launchUrl.length) {
         self.imageView.image =[UIImage imageNamed:self.itemModel.launchUrl];
-        [self.view addSubview:self.imageView];
-        self.timer =[NSTimer scheduledTimerWithTimeInterval:(self.itemModel.lanchMaxTime == 0?3:self.itemModel.lanchMaxTime) target:self selector:@selector(removeTimer:) userInfo:nil repeats:NO];
+        self.timer =[NSTimer scheduledTimerWithTimeInterval:self.itemModel.lanchMaxTime target:self selector:@selector(removeTimer:) userInfo:nil repeats:NO];
     }
     
-    
 }
--(void)removeTimer:(NSTimer *)timer {
-    
-    [self.timer invalidate];
-    self.timer =nil;
-    
-    self.view.window.rootViewController =self.rootVC;
-    
-}
+
 // 加载广告或者网络启动页
 -(void)creatAdvertisementImages {
     
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:self.itemModel.launchUrl] placeholderImage:[UIImage imageNamed:@"LaunchImg@2x.png"]];
+    
+    if (self.isAdv) {// 广告
+        self.imageView.userInteractionEnabled =YES;
+        UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(comeInAdvertDetail:)];
+        [self.imageView addGestureRecognizer:tap];
+        
+        // 广告的倒计时标志
+        
+    }else { //非广告为网络图片
+        self.imageView.userInteractionEnabled =NO;
+        self.timer =[NSTimer scheduledTimerWithTimeInterval:self.itemModel.lanchMaxTime target:self selector:@selector(removeTimer:) userInfo:nil repeats:NO];
+    }
     
 }
 // 加载本地视频
 -(void)creatLocalVideos {
     
+    
+}
+
+-(void)removeTimer:(NSTimer *)timer {
+    
+    [self.timer invalidate];
+    self.timer =nil;
+    
+    [self settingRootVC];
+}
+// 设置并跳转到rootVC
+-(void)settingRootVC {
+    self.view.window.rootViewController =self.rootVC;
+    
+}
+
+#pragma mark - Action Methods
+
+-(void)comeInAdvertDetail:(UITapGestureRecognizer *)gesture {
+    AppDelegate *delegate =[UIApplication sharedApplication].delegate;
+    // 跳到广告详情页
+    [delegate tapInAdvDetail:self andModel:self.itemModel];
     
 }
 

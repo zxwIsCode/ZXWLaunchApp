@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LaunchItemModel.h"
 @interface MyWebViewViewController : UIViewController
+
+@property(nonatomic,strong)LaunchItemModel *itemModel;
 
 @end
