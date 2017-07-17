@@ -32,18 +32,46 @@
     // 初始化要传递的参数Model
     LaunchItemModel *itemModel =[[LaunchItemModel alloc]init];
     
-// ######################第1种：加载本地图片#######################
-//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Local];
-//    itemModel.launchUrl =@"LaunchImg@2x.png";
-//    // 这个参数可以不传，用默认的
-//    itemModel.lanchMaxTime =5;
-// ######################第2.1种：加载网络图片（非广告）#######################
-//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Advert];
-//    itemModel.launchUrl =@"http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif";
-//    // 这2个参数可以不传，用默认的
-//    itemModel.lanchMaxTime =5;
-//    _launchVC.isAdv =NO;
-// ######################第2.2种：加载广告图片#######################
+//    // 第1种：加载本地图片
+//    [self initLocalPhotoNormal:itemModel andNav:nav];
+    
+//    // 第2.1种：加载网络图片（非广告）
+//    [self initNetPhotoNormal:itemModel andNav:nav];
+    
+    // 第2.2种：加载广告图片
+    [self initADVPhotoNormal:itemModel andNav:nav];
+    
+//    // 第3.1种：加载本地视频
+//    [self initLocalVideoNormal:itemModel andNav:nav];
+    
+//    // 第3.2种：加载网络视频
+//   [self initNetVideoNormal:itemModel andNav:nav];
+    
+    // 赋值
+    _launchVC.itemModel =itemModel;
+    
+    self.window.rootViewController =_launchVC;
+    
+    return YES;
+}
+// 第1种：加载本地图片
+-(void)initLocalPhotoNormal:(LaunchItemModel *)itemModel andNav:(UINavigationController *)nav {
+    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Local];
+    itemModel.launchUrl =@"LaunchImg@2x.png";
+    // 这个参数可以不传，用默认的
+    itemModel.lanchMaxTime =5;
+}
+
+//第2.1种：加载网络图片（非广告）
+-(void)initNetPhotoNormal:(LaunchItemModel *)itemModel andNav:(UINavigationController *)nav {
+    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Advert];
+    itemModel.launchUrl =@"http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif";
+    // 这2个参数可以不传，用默认的
+    itemModel.lanchMaxTime =5;
+    _launchVC.isAdv =NO;
+}
+//第2.2种：加载广告图片
+-(void)initADVPhotoNormal:(LaunchItemModel *)itemModel andNav:(UINavigationController *)nav {
     _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Advert];
     itemModel.launchUrl =@"http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif";
     // 这2个参数可以不传，用默认的
@@ -51,7 +79,9 @@
     itemModel.launchJumpUrl =@"https://github.com/zxwIsCode";
     // 这个参数必须传，而且必须是yes
     _launchVC.isAdv =YES;
-// ######################第3.1种：加载本地视频#######################
+}
+// 第3.1种：加载本地视频
+-(void)initLocalVideoNormal:(LaunchItemModel *)itemModel andNav:(UINavigationController *)nav {
     _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Video];
     // 本地文件路径地址
     itemModel.launchUrl = [[NSBundle mainBundle] pathForResource:@"XYVideo" ofType:@"mp4"];
@@ -60,27 +90,20 @@
     // 播放完毕，是否重复播放还是直接跳到主界面
     _launchVC.isRepeatVideo =YES;
     _launchVC.volume =0.7;
-// ######################第3.2种：加载网络视频#######################
-//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Video];
-//    // 本地文件路径地址
-//    itemModel.launchUrl = @"http://v1.mukewang.com/57de8272-38a2-4cae-b734-ac55ab528aa8/L.mp4";
-//    // 这个参数必填，而且必须是Video_Net
-//    _launchVC.videoType =Video_Net;
-//    // 播放完毕，是否重复播放还是直接跳到主界面
-//    _launchVC.isRepeatVideo =NO;
-//    _launchVC.volume =0.7;
-    
-    // 赋值
-    _launchVC.itemModel =itemModel;
-    
-    self.window.rootViewController =_launchVC;
-    
-//
-    
-    
-    
-    return YES;
 }
+// 第3.2种：加载网络视频
+-(void)initNetVideoNormal:(LaunchItemModel *)itemModel andNav:(UINavigationController *)nav {
+    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Video];
+    // 本地文件路径地址
+    itemModel.launchUrl = @"http://v1.mukewang.com/57de8272-38a2-4cae-b734-ac55ab528aa8/L.mp4";
+    // 这个参数必填，而且必须是Video_Net
+    _launchVC.videoType =Video_Net;
+    // 播放完毕，是否重复播放还是直接跳到主界面
+    _launchVC.isRepeatVideo =NO;
+    _launchVC.volume =0.7;
+}
+
+
 // 跳到广告详情页
 -(void)tapInAdvDetail:(id)vc andModel:(LaunchItemModel *)itemModel {
     LaunchViewController *launchVC =(LaunchViewController *)vc;
