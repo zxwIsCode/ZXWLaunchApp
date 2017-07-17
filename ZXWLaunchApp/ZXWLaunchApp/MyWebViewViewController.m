@@ -49,7 +49,7 @@
     
     if (!_webView) {
         _webView =[[UIWebView alloc]init];
-        if (!self.itemModel.launchJumpUrl.length) {
+        if (!self.itemModel.launchJumpUrl.length) { // 不存在，默认调到我的技术网址
             self.itemModel.launchJumpUrl =@"http://www.jianshu.com/nb/7415402";
         }
         NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.itemModel.launchJumpUrl]];

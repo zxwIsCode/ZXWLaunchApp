@@ -33,25 +33,25 @@
     LaunchItemModel *itemModel =[[LaunchItemModel alloc]init];
     
 // ######################第1种：加载本地图片#######################
-    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Local];
-    itemModel.launchUrl =@"http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif";
-    // 这个参数可以不传，用默认的
-    itemModel.lanchMaxTime =5;
+//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Local];
+//    itemModel.launchUrl =@"LaunchImg@2x.png";
+//    // 这个参数可以不传，用默认的
+//    itemModel.lanchMaxTime =5;
 // ######################第2.1种：加载网络图片（非广告）#######################
+//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Advert];
+//    itemModel.launchUrl =@"http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif";
+//    // 这2个参数可以不传，用默认的
+//    itemModel.lanchMaxTime =5;
+//    _launchVC.isAdv =NO;
+// ######################第2.2种：加载广告图片#######################
     _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Advert];
     itemModel.launchUrl =@"http://img1.gamedog.cn/2013/06/03/43-130603140F30.gif";
     // 这2个参数可以不传，用默认的
     itemModel.lanchMaxTime =5;
-    _launchVC.isAdv =NO;
-// ######################第2.2种：加载广告图片#######################
-//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Advert];
-//    itemModel.launchUrl =@"LaunchImg@2x.png";
-//    // 这2个参数可以不传，用默认的
-//    itemModel.lanchMaxTime =5;
-//    itemModel.launchJumpUrl =@"http://www.jianshu.com";
-//    // 这个参数必须传，而且必须是yes
-//    _launchVC.isAdv =YES;
-    
+    itemModel.launchJumpUrl =@"https://github.com/zxwIsCode";
+    // 这个参数必须传，而且必须是yes
+    _launchVC.isAdv =YES;
+// ######################第3种：加载本地视频#######################
     // 赋值
     _launchVC.itemModel =itemModel;
     

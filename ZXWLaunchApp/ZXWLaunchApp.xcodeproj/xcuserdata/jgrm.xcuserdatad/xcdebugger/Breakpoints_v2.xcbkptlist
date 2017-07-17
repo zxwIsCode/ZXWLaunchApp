@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZXWLaunchApp/ZXWLaunch/LaunchViewController.m"
-            timestampString = "521806503.090249"
+            timestampString = "521968995.436544"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "-creatLocalImages"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-loadLaunchImages"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZXWLaunchApp/MyWebViewViewController.m"
-            timestampString = "521806503.090333"
+            timestampString = "521968995.436681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"

@@ -17,6 +17,6 @@
 @property(nonatomic,copy)NSString *videoUrlKind;
 // 启动页最长时间，以s为单位,默认为3s
 @property(nonatomic,assign)NSInteger lanchMaxTime;
-// 启动页（广告）跳转的url，默认为百度
+// 启动页（广告）跳转的url，默认为我的技术网址
 @property(nonatomic,copy)NSString *launchJumpUrl;
 @end
