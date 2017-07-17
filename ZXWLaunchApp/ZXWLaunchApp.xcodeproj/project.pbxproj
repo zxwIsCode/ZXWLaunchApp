@@ -17,8 +17,8 @@
 		8B35A1081F18765500DB2C3A /* ZXWLaunchAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35A1071F18765500DB2C3A /* ZXWLaunchAppUITests.m */; };
 		8B5D32431F19F007002CFA5E /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D32421F19F007002CFA5E /* LaunchViewController.m */; };
 		8B5D32461F19F428002CFA5E /* LaunchItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5D32451F19F428002CFA5E /* LaunchItemModel.m */; };
-		8B5D324B1F19FA71002CFA5E /* qidong.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D324A1F19FA71002CFA5E /* qidong.mp4 */; };
 		8B5D324D1F19FA83002CFA5E /* LaunchImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */; };
+		8B8C41E71F1CAFEC0070D9E4 /* XYVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8B8C41E61F1CAFEB0070D9E4 /* XYVideo.mp4 */; };
 		8BA191541F1A10120048C425 /* MyWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191531F1A10120048C425 /* MyWebViewViewController.m */; };
 		8BA191771F1A194A0048C425 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191571F1A194A0048C425 /* MKAnnotationView+WebCache.m */; };
 		8BA191781F1A194A0048C425 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA191591F1A194A0048C425 /* NSData+ImageContentType.m */; };
@@ -80,8 +80,8 @@
 		8B5D32421F19F007002CFA5E /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		8B5D32441F19F428002CFA5E /* LaunchItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchItemModel.h; sourceTree = "<group>"; };
 		8B5D32451F19F428002CFA5E /* LaunchItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchItemModel.m; sourceTree = "<group>"; };
-		8B5D324A1F19FA71002CFA5E /* qidong.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = qidong.mp4; path = "../../../../../TempCode/App启动页集合/startMovie-master/StartMovie/StartMovie/qidong.mp4"; sourceTree = "<group>"; };
 		8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "LaunchImg@2x.png"; path = "../../../../../TempCode/App启动页集合/XYLaunchAndIntroduction-master/XYLaunchAndIntroductionExample/XYLaunchAndIntroductionExample/XYTestImgs/LaunchImg@2x.png"; sourceTree = "<group>"; };
+		8B8C41E61F1CAFEB0070D9E4 /* XYVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = XYVideo.mp4; path = "../../../../../TempCode/App启动页集合/XYLaunchAndIntroduction-master/XYLaunchAndIntroductionExample/XYLaunchAndIntroductionExample/XYTestImgs/XYVideo.mp4"; sourceTree = "<group>"; };
 		8BA191521F1A10120048C425 /* MyWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyWebViewViewController.h; sourceTree = "<group>"; };
 		8BA191531F1A10120048C425 /* MyWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyWebViewViewController.m; sourceTree = "<group>"; };
 		8BA191561F1A194A0048C425 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */,
-				8B5D324A1F19FA71002CFA5E /* qidong.mp4 */,
+				8B8C41E61F1CAFEB0070D9E4 /* XYVideo.mp4 */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -390,10 +390,10 @@
 			files = (
 				8BA1918F1F1A21B20048C425 /* LICENSE in Resources */,
 				8B5D324D1F19FA83002CFA5E /* LaunchImg@2x.png in Resources */,
+				8B8C41E71F1CAFEC0070D9E4 /* XYVideo.mp4 in Resources */,
 				8B35A0F01F18765400DB2C3A /* LaunchScreen.storyboard in Resources */,
 				8B35A0ED1F18765400DB2C3A /* Assets.xcassets in Resources */,
 				8B35A0EB1F18765400DB2C3A /* Main.storyboard in Resources */,
-				8B5D324B1F19FA71002CFA5E /* qidong.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

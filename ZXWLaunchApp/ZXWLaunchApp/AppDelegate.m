@@ -51,13 +51,30 @@
     itemModel.launchJumpUrl =@"https://github.com/zxwIsCode";
     // 这个参数必须传，而且必须是yes
     _launchVC.isAdv =YES;
-// ######################第3种：加载本地视频#######################
+// ######################第3.1种：加载本地视频#######################
+    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Video];
+    // 本地文件路径地址
+    itemModel.launchUrl = [[NSBundle mainBundle] pathForResource:@"XYVideo" ofType:@"mp4"];
+    // 当为本地视频时这个参数可不填
+    _launchVC.videoType =Video_Local;
+    // 播放完毕，是否重复播放还是直接跳到主界面
+    _launchVC.isRepeatVideo =YES;
+    _launchVC.volume =0.7;
+// ######################第3.2种：加载网络视频#######################
+//    _launchVC =[[LaunchViewController alloc]initWithRootVC:nav andLaunchType:LaunchType_Video];
+//    // 本地文件路径地址
+//    itemModel.launchUrl = @"http://v1.mukewang.com/57de8272-38a2-4cae-b734-ac55ab528aa8/L.mp4";
+//    // 这个参数必填，而且必须是Video_Net
+//    _launchVC.videoType =Video_Net;
+//    // 播放完毕，是否重复播放还是直接跳到主界面
+//    _launchVC.isRepeatVideo =NO;
+//    _launchVC.volume =0.7;
+    
     // 赋值
     _launchVC.itemModel =itemModel;
     
     self.window.rootViewController =_launchVC;
     
-//    // gif网络图片
 //
     
     

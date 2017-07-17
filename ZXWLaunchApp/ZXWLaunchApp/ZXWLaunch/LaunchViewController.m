@@ -10,6 +10,9 @@
 #import "UIImageView+WebCache.h"
 #import "AppDelegate.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
 
 
 @interface LaunchViewController ()
@@ -36,6 +39,9 @@
 // 倒计时跳过的Button
 @property(nonatomic,strong)UIButton *skipBtn;
 
+@property(nonatomic,strong)MPMoviePlayerController *player;
+
+@property(nonatomic,strong)UIButton *enterButton;
 
 @end
 
@@ -132,9 +138,44 @@
 }
 // 加载本地视频
 -(void)creatLocalVideos {
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    if (self.itemModel.launchUrl.length) {
+        
+        // 本地视频播放用 fileURLWithPath转换url切记，就爬了这个坑
+        self.player = [[MPMoviePlayerController alloc] initWithContentURL:[self giveUserUrl]];
+        [self.view addSubview:self.player.view];
+        self.player.shouldAutoplay = YES;
+        [self.player setControlStyle:MPMovieControlStyleNone];
+        self.player.repeatMode = MPMovieRepeatModeNone;
+
+        self.player.view.frame =[UIScreen mainScreen].bounds;
+        
+        self.player.view.alpha = 0;
+        // 视频的转换
+        [UIView animateWithDuration:3 animations:^{
+            self.player.view.alpha = 1;
+            [self.player prepareToPlay];
+        }];
+        
+        // 添加播放完毕之后的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoPlayFinish) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+        
+        [self.player.view addSubview:self.enterButton];
+        [UIView animateWithDuration:3.0 animations:^{
+            self.enterButton.alpha = 1.0;
+        }];
+        
+    }
     
 }
+-(NSURL *)giveUserUrl {
+    return self.videoType ==Video_Net ?[NSURL URLWithString:self.itemModel.launchUrl]:[NSURL fileURLWithPath:self.itemModel.launchUrl];
+}
+
+
+
+
 // 定时器的运行
 -(void)continueTimer:(NSTimer *)timer {
     
@@ -160,6 +201,20 @@
     
 }
 
+#pragma mark - NSNotificationCenter
+- (void)videoPlayFinish
+{
+    MPMoviePlaybackState playbackState = [self.player playbackState];
+    if (playbackState == MPMoviePlaybackStateStopped || playbackState == MPMoviePlaybackStatePaused) {
+        if (self.isRepeatVideo) { // 重复播放
+            [self.player play];
+            
+        }else { // 播放完毕跳入主界面
+            [self enterButtonClick:nil];
+        }
+    }
+}
+
 #pragma mark - Action Methods
 
 -(void)comeInAdvertDetail:(UITapGestureRecognizer *)gesture {
@@ -174,6 +229,16 @@
 }
 -(void)skipBtnClick:(UIButton *)button {
     [self removeTimer:nil];
+}
+
+- (void)enterButtonClick:(UIButton *)btn {
+    NSLog(@"进入应用");
+    // 停止播放，清除通知
+    [self.player stop];
+    self.player =nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [self settingRootVC];
 }
 
 #pragma mark - Setter & Getter
@@ -204,6 +269,22 @@
         
     }
     return _skipBtn;
+}
+
+-(UIButton *)enterButton {
+    if (!_enterButton) {
+        //进入按钮
+        _enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _enterButton.frame = CGRectMake(24, [UIScreen mainScreen].bounds.size.height - 32 - 48, [UIScreen mainScreen].bounds.size.width - 48, 48);
+        _enterButton.layer.borderWidth = 1;
+        _enterButton.layer.cornerRadius = 24;
+        _enterButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        [_enterButton setTitle:@"进入应用" forState:UIControlStateNormal];
+        _enterButton.alpha = 0;
+        [_enterButton addTarget:self action:@selector(enterButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _enterButton;
+    
 }
 
 @end
