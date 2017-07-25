@@ -39,8 +39,10 @@
 // 倒计时跳过的Button
 @property(nonatomic,strong)UIButton *skipBtn;
 
+// 视频播放器（视频播放专用）
 @property(nonatomic,strong)MPMoviePlayerController *player;
 
+// 视频播放界面的点击进入（视频播放专用）
 @property(nonatomic,strong)UIButton *enterButton;
 
 @end

@@ -32,8 +32,8 @@
     // 初始化要传递的参数Model
     LaunchItemModel *itemModel =[[LaunchItemModel alloc]init];
     
-//    // 第1种：加载本地图片
-//    [self initLocalPhotoNormal:itemModel andNav:nav];
+    // 第1种：加载本地图片
+    [self initLocalPhotoNormal:itemModel andNav:nav];
     
 //    // 第2.1种：加载网络图片（非广告）
 //    [self initNetPhotoNormal:itemModel andNav:nav];

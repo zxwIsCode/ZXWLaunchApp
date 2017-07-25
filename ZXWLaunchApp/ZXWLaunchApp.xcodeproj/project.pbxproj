@@ -40,6 +40,7 @@
 		8BA1918F1F1A21B20048C425 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 8BA1918B1F1A21B20048C425 /* LICENSE */; };
 		8BA191901F1A21B20048C425 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1918D1F1A21B20048C425 /* MBProgressHUD.m */; };
 		8BA191911F1A21B20048C425 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1918E1F1A21B20048C425 /* README.mdown */; };
+		8BEBF9B51F27382B00B1A47B /* QQ20170725-151644.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF9B41F27382B00B1A47B /* QQ20170725-151644.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		8BA1918C1F1A21B20048C425 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8BA1918D1F1A21B20048C425 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8BA1918E1F1A21B20048C425 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		8BEBF9B41F27382B00B1A47B /* QQ20170725-151644.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "QQ20170725-151644.gif"; path = "../../../../../../Downloads/QQ20170725-151644.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		8B5D32471F19FA0D002CFA5E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8BEBF9B41F27382B00B1A47B /* QQ20170725-151644.gif */,
 				8B5D324C1F19FA83002CFA5E /* LaunchImg@2x.png */,
 				8B8C41E61F1CAFEB0070D9E4 /* XYVideo.mp4 */,
 			);
@@ -393,6 +396,7 @@
 				8B8C41E71F1CAFEC0070D9E4 /* XYVideo.mp4 in Resources */,
 				8B35A0F01F18765400DB2C3A /* LaunchScreen.storyboard in Resources */,
 				8B35A0ED1F18765400DB2C3A /* Assets.xcassets in Resources */,
+				8BEBF9B51F27382B00B1A47B /* QQ20170725-151644.gif in Resources */,
 				8B35A0EB1F18765400DB2C3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
